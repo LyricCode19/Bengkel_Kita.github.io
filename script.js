@@ -33,3 +33,19 @@ document.addEventListener('click', function (e) {
     searchForm.classList.remove('active');
   }
 });
+
+
+
+function goToWhatsApp() {
+  // Mendapatkan nilai dari setiap input
+  var nama = document.getElementById('nama').value;
+  var konsultasi = document.getElementById('konsultasi').value;
+  var lokasi = document.getElementById('lokasi').value;
+
+  // Menggunakan encodeURIComponent untuk meng-encode semua bagian pesan
+  var pesan = 'Halo, saya ' + nama + '. Saya ingin konsultasi tentang ' + konsultasi + '. Saya berada di ' + lokasi + '.';
+  var whatsappUrl = 'https://wa.me/6285211736980?text=' + encodeURIComponent(pesan);
+
+  // Buka WhatsApp dengan pesan yang telah dibentuk
+  window.open(whatsappUrl, '_blank');
+}
